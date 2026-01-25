@@ -9,7 +9,7 @@ public class BubbleSort {
         
         // 外层循环控制排序轮数
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化：如果某一轮没有发生交换，说明已经有序
+            boolean swapped = false; // 优化标志，如果某一轮没有发生交换，则说明数组已经有序
             
             // 内层循环进行相邻元素比较和交换
             for (int j = 0; j < n - i - 1; j++) {
