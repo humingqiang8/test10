@@ -44,17 +44,17 @@ public class BubbleSort {
     }
     
     /**
-     * 主方法 - 测试冒泡排序
+     * 主方法 - 用于测试冒泡排序
      */
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         
-        System.out.println("原始数组:");
+        System.out.println("排序前的数组:");
         printArray(arr);
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
+        System.out.println("排序后的数组:");
         printArray(arr);
     }
 }
