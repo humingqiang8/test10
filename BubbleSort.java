@@ -47,14 +47,53 @@ public class BubbleSort {
      * 主方法 - 测试冒泡排序
      */
     public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
-        
-        System.out.println("原始数组:");
-        printArray(arr);
-        
-        bubbleSort(arr);
-        
-        System.out.println("排序后数组:");
-        printArray(arr);
+        // 测试用例1：普通未排序数组
+        int[] arr1 = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("测试用例1 - 普通未排序数组:");
+        System.out.print("原始数组: ");
+        printArray(arr1);
+        bubbleSort(arr1);
+        System.out.print("排序后数组: ");
+        printArray(arr1);
+        System.out.println();
+
+        // 测试用例2：已排序数组（验证优化效果）
+        int[] arr2 = {1, 2, 3, 4, 5};
+        System.out.println("测试用例2 - 已排序数组:");
+        System.out.print("原始数组: ");
+        printArray(arr2);
+        bubbleSort(arr2);
+        System.out.print("排序后数组: ");
+        printArray(arr2);
+        System.out.println();
+
+        // 测试用例3：逆序数组
+        int[] arr3 = {5, 4, 3, 2, 1};
+        System.out.println("测试用例3 - 逆序数组:");
+        System.out.print("原始数组: ");
+        printArray(arr3);
+        bubbleSort(arr3);
+        System.out.print("排序后数组: ");
+        printArray(arr3);
+        System.out.println();
+
+        // 测试用例4：单个元素
+        int[] arr4 = {42};
+        System.out.println("测试用例4 - 单个元素:");
+        System.out.print("原始数组: ");
+        printArray(arr4);
+        bubbleSort(arr4);
+        System.out.print("排序后数组: ");
+        printArray(arr4);
+        System.out.println();
+
+        // 测试用例5：包含重复元素
+        int[] arr5 = {3, 1, 4, 1, 5, 9, 2, 6, 5};
+        System.out.println("测试用例5 - 包含重复元素:");
+        System.out.print("原始数组: ");
+        printArray(arr5);
+        bubbleSort(arr5);
+        System.out.print("排序后数组: ");
+        printArray(arr5);
     }
 }
