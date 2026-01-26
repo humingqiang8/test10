@@ -47,6 +47,7 @@ public class BubbleSort {
      * 主方法 - 测试冒泡排序
      */
     public static void main(String[] args) {
+        // 测试普通数组
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         
         System.out.println("原始数组:");
@@ -56,5 +57,46 @@ public class BubbleSort {
         
         System.out.println("排序后数组:");
         printArray(arr);
+        
+        // 测试边界情况
+        int[] emptyArr = {};
+        System.out.println("\n空数组测试:");
+        System.out.print("排序前: ");
+        printArray(emptyArr);
+        bubbleSort(emptyArr);
+        System.out.print("排序后: ");
+        printArray(emptyArr);
+        
+        int[] singleElement = {42};
+        System.out.println("\n单元素数组测试:");
+        System.out.print("排序前: ");
+        printArray(singleElement);
+        bubbleSort(singleElement);
+        System.out.print("排序后: ");
+        printArray(singleElement);
+        
+        int[] sortedArr = {1, 2, 3, 4, 5};
+        System.out.println("\n已排序数组测试:");
+        System.out.print("排序前: ");
+        printArray(sortedArr);
+        bubbleSort(sortedArr);
+        System.out.print("排序后: ");
+        printArray(sortedArr);
+        
+        int[] reverseSortedArr = {5, 4, 3, 2, 1};
+        System.out.println("\n逆序数组测试:");
+        System.out.print("排序前: ");
+        printArray(reverseSortedArr);
+        bubbleSort(reverseSortedArr);
+        System.out.print("排序后: ");
+        printArray(reverseSortedArr);
+        
+        int[] duplicateElementsArr = {3, 7, 3, 1, 7, 2, 1};
+        System.out.println("\n重复元素数组测试:");
+        System.out.print("排序前: ");
+        printArray(duplicateElementsArr);
+        bubbleSort(duplicateElementsArr);
+        System.out.print("排序后: ");
+        printArray(duplicateElementsArr);
     }
 }
