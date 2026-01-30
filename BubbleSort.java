@@ -2,6 +2,8 @@ public class BubbleSort {
     
     /**
      * 冒泡排序方法
+     * 时间复杂度：最好情况 O(n)，最坏情况 O(n²)，平均情况 O(n²)
+     * 空间复杂度：O(1)
      * @param arr 待排序的整数数组
      */
     public static void bubbleSort(int[] arr) {
@@ -12,6 +14,7 @@ public class BubbleSort {
             boolean swapped = false; // 优化标志，如果某一轮没有发生交换，则说明已排序完成
             
             // 内层循环进行相邻元素比较和交换
+            // 每次外层循环后，最大的元素会"冒泡"到末尾，所以内层循环范围逐渐减小
             for (int j = 0; j < n - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     // 交换相邻元素
