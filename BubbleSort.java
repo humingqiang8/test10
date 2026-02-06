@@ -1,20 +1,22 @@
 public class BubbleSort {
     
     /**
-     * 冒泡排序方法
-     * @param arr 待排序的整数数组
+     * Sorts an array of integers using the bubble sort algorithm
+     * @param arr the array to be sorted
      */
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         
-        // 外层循环控制排序轮数
+        // Outer loop for number of passes
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化：如果某一轮没有发生交换，则说明已经有序
+            boolean swapped = false;
             
-            // 内层循环进行相邻元素比较和交换
-            for (int j = 0; j < n - 1 - i; j++) {
+            // Inner loop for comparisons in each pass
+            // Last i elements are already in place after i passes
+            for (int j = 0; j < n - i - 1; j++) {
+                // Compare adjacent elements
                 if (arr[j] > arr[j + 1]) {
-                    // 交换相邻元素
+                    // Swap if they are in wrong order
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -22,7 +24,7 @@ public class BubbleSort {
                 }
             }
             
-            // 如果这一轮没有发生交换，说明数组已经有序，可以提前结束
+            // If no swapping occurred, array is already sorted
             if (!swapped) {
                 break;
             }
@@ -30,31 +32,28 @@ public class BubbleSort {
     }
     
     /**
-     * 打印数组元素
-     * @param arr 要打印的数组
+     * Utility method to print the elements of an array
+     * @param arr the array to be printed
      */
     public static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(" ");
-            }
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
     
     /**
-     * 主方法 - 测试冒泡排序
+     * Main method to test the bubble sort implementation
      */
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         
-        System.out.println("原始数组:");
+        System.out.println("Original array:");
         printArray(arr);
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
+        System.out.println("Sorted array:");
         printArray(arr);
     }
 }
