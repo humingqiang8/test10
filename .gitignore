@@ -1,4 +1,1 @@
-```
-# Compiled files
-*.class
-```
+Nothing should be ignored based on the provided file changes, as only a source code file (`BubbleSort.java`) was modified and no build artifacts, dependencies, or temporary files were included in the changes.

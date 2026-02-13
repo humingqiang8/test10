@@ -9,10 +9,10 @@ public class BubbleSort {
         
         // 外层循环控制排序轮数
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化标志，如果某一轮没有发生交换，则说明已排序完成
+            boolean swapped = false; // 优化：如果某一轮没有发生交换，说明已经有序
             
             // 内层循环进行相邻元素比较和交换
-            for (int j = 0; j < n - i - 1; j++) {
+            for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     // 交换相邻元素
                     int temp = arr[j];
@@ -22,7 +22,7 @@ public class BubbleSort {
                 }
             }
             
-            // 如果这一轮没有发生任何交换，说明数组已经有序
+            // 如果这一轮没有发生交换，数组已经有序，可以提前结束
             if (!swapped) {
                 break;
             }
@@ -37,14 +37,14 @@ public class BubbleSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
             if (i < arr.length - 1) {
-                System.out.print(" ");
+                System.out.print(", ");
             }
         }
         System.out.println();
     }
     
     /**
-     * 主方法，用于测试冒泡排序
+     * 主方法 - 演示冒泡排序的使用
      */
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
@@ -54,26 +54,7 @@ public class BubbleSort {
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
+        System.out.println("排序后的数组:");
         printArray(arr);
-        
-        // 测试边界情况：空数组和单个元素
-        int[] emptyArr = {};
-        bubbleSort(emptyArr);
-        System.out.println("空数组排序后:");
-        printArray(emptyArr);
-        
-        int[] singleElement = {42};
-        bubbleSort(singleElement);
-        System.out.println("单元素数组排序后:");
-        printArray(singleElement);
-        
-        // 测试已排序数组
-        int[] sortedArr = {1, 2, 3, 4, 5};
-        System.out.println("已排序数组:");
-        printArray(sortedArr);
-        bubbleSort(sortedArr);
-        System.out.println("排序后:");
-        printArray(sortedArr);
     }
 }
