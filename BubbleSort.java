@@ -9,12 +9,12 @@ public class BubbleSort {
         
         // 外层循环控制排序轮数
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化：如果某一轮没有发生交换，说明已经有序
+            boolean swapped = false; // 优化：如果某一轮没有发生交换，则数组已有序
             
             // 内层循环进行相邻元素比较和交换
-            for (int j = 0; j < n - i - 1; j++) {
+            for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    // 交换 arr[j] 和 arr[j+1]
+                    // 交换相邻元素
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -22,7 +22,7 @@ public class BubbleSort {
                 }
             }
             
-            // 如果这一轮没有发生交换，数组已经有序，可以提前结束
+            // 如果这一轮没有发生任何交换，说明数组已经有序，可以提前结束
             if (!swapped) {
                 break;
             }
@@ -30,14 +30,14 @@ public class BubbleSort {
     }
     
     /**
-     * 打印数组内容
+     * 打印数组元素
      * @param arr 要打印的数组
      */
     public static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
             if (i < arr.length - 1) {
-                System.out.print(", ");
+                System.out.print(" ");
             }
         }
         System.out.println();
@@ -54,7 +54,7 @@ public class BubbleSort {
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
+        System.out.println("排序后的数组:");
         printArray(arr);
     }
 }
