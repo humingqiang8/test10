@@ -1,4 +1,79 @@
-```
-# Compiled files
+```java
+# Compiled Java files
 *.class
+
+# Build artifacts
+*.jar
+*.war
+*.ear
+target/
+
+# Dependencies
+lib/
+libs/
+
+# IDE files
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+*.coverage
+htmlcov/
+
+# Package manager caches
+.gradle/
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Testing
+.junit/
+test-results/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Distribution artifacts
+dist/
+build/
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.gz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
 ```
