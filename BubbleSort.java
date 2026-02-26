@@ -9,12 +9,14 @@ public class BubbleSort {
         
         // 外层循环控制排序轮数
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化：如果某一轮没有发生交换，则说明已经有序
+            // 标记本轮是否发生交换，用于优化
+            boolean swapped = false;
             
             // 内层循环进行相邻元素比较和交换
-            for (int j = 0; j < n - 1 - i; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                // 如果前一个元素大于后一个元素，则交换
                 if (arr[j] > arr[j + 1]) {
-                    // 交换相邻元素
+                    // 交换元素
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -22,7 +24,7 @@ public class BubbleSort {
                 }
             }
             
-            // 如果这一轮没有发生交换，说明数组已经有序，可以提前结束
+            // 如果本轮没有发生交换，说明数组已经有序，可以提前结束
             if (!swapped) {
                 break;
             }
@@ -37,14 +39,14 @@ public class BubbleSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
             if (i < arr.length - 1) {
-                System.out.print(" ");
+                System.out.print(", ");
             }
         }
         System.out.println();
     }
     
     /**
-     * 主方法 - 测试冒泡排序
+     * 主方法，用于测试冒泡排序
      */
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
@@ -54,7 +56,7 @@ public class BubbleSort {
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
+        System.out.println("排序后的数组:");
         printArray(arr);
     }
 }
