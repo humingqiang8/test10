@@ -1,0 +1,29 @@
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 圆柱体底部椭圆（后半部分，被遮挡） -->
+  <ellipse cx="100" cy="250" rx="60" ry="20" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- 圆柱体侧面（矩形） -->
+  <rect x="40" y="50" width="120" height="200" fill="url(#cylinderGradient)" stroke="#333" stroke-width="2"/>
+  
+  <!-- 圆柱体顶部椭圆 -->
+  <ellipse cx="100" cy="50" rx="60" ry="20" fill="url(#topGradient)" stroke="#333" stroke-width="2"/>
+  
+  <!-- 圆柱体底部椭圆（前半部分） -->
+  <ellipse cx="100" cy="250" rx="60" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <!-- 侧面渐变，模拟光照效果 -->
+    <linearGradient id="cylinderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#888;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#fff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#666;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 顶部渐变，模拟光照效果 -->
+    <radialGradient id="topGradient" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#aaa;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+</svg>
