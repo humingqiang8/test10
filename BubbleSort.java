@@ -5,14 +5,18 @@ public class BubbleSort {
      * @param arr 待排序的整数数组
      */
     public static void bubbleSort(int[] arr) {
-        int n = arr.length;
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
         
-        // 外层循环控制排序轮数
+        int n = arr.length;
+        boolean swapped;
+        
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // 优化标志，如果某一轮没有发生交换，则说明已排序完成
+            swapped = false;
             
-            // 内层循环进行相邻元素比较和交换
-            for (int j = 0; j < n - i - 1; j++) {
+            // 最后 i 个元素已经有序，不需要再比较
+            for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     // 交换相邻元素
                     int temp = arr[j];
@@ -22,58 +26,31 @@ public class BubbleSort {
                 }
             }
             
-            // 如果这一轮没有发生任何交换，说明数组已经有序
+            // 如果这一轮没有发生交换，说明数组已经有序，提前结束
             if (!swapped) {
                 break;
             }
         }
     }
     
-    /**
-     * 打印数组内容
-     * @param arr 要打印的数组
-     */
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(" ");
-            }
-        }
-        System.out.println();
-    }
-    
-    /**
-     * 主方法，用于测试冒泡排序
-     */
+    // 测试方法
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         
-        System.out.println("原始数组:");
+        System.out.println("排序前:");
         printArray(arr);
         
         bubbleSort(arr);
         
-        System.out.println("排序后数组:");
-        printArray(arr);
-        
-        // 测试边界情况：空数组和单个元素
-        int[] emptyArr = {};
-        bubbleSort(emptyArr);
-        System.out.println("空数组排序后:");
-        printArray(emptyArr);
-        
-        int[] singleElement = {42};
-        bubbleSort(singleElement);
-        System.out.println("单元素数组排序后:");
-        printArray(singleElement);
-        
-        // 测试已排序数组
-        int[] sortedArr = {1, 2, 3, 4, 5};
-        System.out.println("已排序数组:");
-        printArray(sortedArr);
-        bubbleSort(sortedArr);
         System.out.println("排序后:");
-        printArray(sortedArr);
+        printArray(arr);
+    }
+    
+    // 打印数组的辅助方法
+    public static void printArray(int[] arr) {
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 }
